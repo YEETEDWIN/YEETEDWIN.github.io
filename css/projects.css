@@ -4,12 +4,13 @@
 }
 body {
     background: #ff530f;
+    font-family: 'Quicksand', sans-serif;
 }
 p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: 'Inconsolata';
+  font-size: 1.2rem;
+  line-height: 1.8;
   text-align: center;
-  font-size: 20px;
   color: #fff;
 }
 h2 {
@@ -20,19 +21,22 @@ h2 {
   color: #fff;
 }
 h3 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  font-size: 30px;
   color: #fff;
+  font-family: 'Inconsolata';
+  font-size: 3.0rem;
+  font-weight: 300;
+  line-height: 1.2; 
+  margin: 1.414em 0 .5em;
 }
-th {
-    font-family: 'Papyrus', fantasy;
-    font-weight: 200;
-    text-align: center;
-    font-size: 20px;
-    color: #fff;
+body a {
+  color: #2f353a;
+  text-decoration: underline;
 }
+body a:hover {
+  color: #383838;
+  font-weight: 700;
+}
+
 /* Main Section Styled */
 .element-section{
 	width: 100%;
@@ -68,7 +72,32 @@ th {
     margin-right: 70px;
 	padding: 15px;
 }
+.github-btn {
+    background: #fff;
+}
+.content-project .github-btn {
+  align-items: center;
+  border: 2px solid #2f353a;
+  border-radius: 5px; 
+  display: block;
+  width: 180px;
+}
+.content-project .github-btn:hover {
+    box-shadow: 1px 1px 5px 1px #ccc;
+}
+.content-project .github-btn div {
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    line-height: 1; 
+    margin: 10px 25px;
+}
+.content-project .github-btn div {
+    margin-top: 6px;
 
+}
+.content-project a {
+  text-decoration: none;
+}
 
 /* Buttons */
 .custom-btn {
