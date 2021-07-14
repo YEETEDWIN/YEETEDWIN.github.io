@@ -3,7 +3,7 @@
 	padding: 0;
 }
 body {
-    background: #1b72ec;
+    background: #ff530f;
 }
 p {
   font-family: 'Lato', sans-serif;
@@ -34,15 +34,6 @@ th {
     color: #fff;
 }
 /* Main Section Styled */
-#row2, #row1 {
-  margin-right: 100px;
-  margin-left: 120px;
-  float: left;
-}
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
 .element-section{
 	width: 100%;
 	background: #fff;
@@ -51,7 +42,7 @@ th {
 	width: 1430px;
     margin: auto;
     display: block;
-    border: 5px solid cyan;
+    border: 5px solid rgb(255, 187, 0);
     margin-bottom: 70px;
 }
 .bg-color-1{
@@ -59,7 +50,7 @@ th {
 }
 .title{
 	width: 100%;
-	background: #1b72ec;
+	background: #ff530f;
 	padding: 20px 0px;
 	color: white;
 	text-align: center;
