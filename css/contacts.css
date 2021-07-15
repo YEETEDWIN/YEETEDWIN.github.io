@@ -1,16 +1,17 @@
+
 * {
 	margin: 0;
 	padding: 0;
 }
 body {
-    background: #ff530f;
+  background: #4464f5;
 }
 p {
   font-family: 'Comic Sans MS';
   font-size: 1.2rem;
   line-height: 1.8;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 h2 {
   font-family: 'Copperplate', fantasy;
@@ -20,7 +21,7 @@ h2 {
   color: #fff;
 }
 h3 {
-  color: #fff;
+  color: #000;
   font-family: 'Impact';
   font-size: 3.0rem;
   font-weight: 100;
@@ -43,17 +44,17 @@ body a:hover {
 }
 .element-contain{
 	width: 1430px;
-    margin: auto;
-    display: block;
-    border: 5px solid rgb(255, 187, 0);
-    margin-bottom: 70px;
+  margin: auto;
+  display: block;
+  border: 5px solid rgb(231, 88, 250);
+  margin-bottom: 70px;
 }
 .bg-color-1{
 	background: #f2f2f2;
 }
 .title{
 	width: 100%;
-	background: #ff530f;
+	background: #4464f5;
 	padding: 20px 0px;
 	color: white;
 	text-align: center;
@@ -68,7 +69,7 @@ body a:hover {
 .item{
 	background: #BECCCD;
 	margin: 5px;
-    margin-right: 70px;
+  margin-right: 70px;
 	padding: 15px;
 }
 .github-btn {
@@ -97,6 +98,47 @@ body a:hover {
 .content-project a {
   text-decoration: none;
 }
+.content-project {
+  background: rgba(118,174,241,1);
+  border: 4px solid #ccff00;
+}
+.content-project:hover {
+  background: rgb(213, 77, 255);
+}
+
+
+.content-project2 .github-btn {
+  align-items: center;
+  border: 2px solid #2f353a;
+  border-radius: 5px; 
+  display: block;
+  width: 180px;
+}
+.content-project2 .github-btn:hover {
+    box-shadow: 1px 1px 5px 1px #ccc;
+}
+.content-project2 .github-btn div {
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    line-height: 1; 
+    margin: 10px 25px;
+}
+.content-project2 .github-btn div {
+    margin-top: 6px;
+
+}
+.content-project2 a {
+  text-decoration: none;
+}
+.content-project2 {
+  background: rgba(118,174,241,1);
+  border: 4px solid #ccff00;
+  
+}
+.content-project2:hover {
+  background: rgb(213, 77, 255);
+}
+
 
 /* Buttons */
 .custom-btn {
