@@ -4,14 +4,14 @@
 	padding: 0;
 }
 body {
-  background: #4464f5;
+  background: rgb(0, 183, 255);
 }
 p {
   font-family: 'Comic Sans MS';
   font-size: 1.2rem;
   line-height: 1.8;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 h2 {
   font-family: 'Copperplate', fantasy;
@@ -43,10 +43,10 @@ body a:hover {
 	background: #fff;
 }
 .element-contain{
-	width: 1430px;
+  width: 1430px;
   margin: auto;
   display: block;
-  border: 5px solid rgb(231, 88, 250);
+  border: 5px solid #002fff;
   margin-bottom: 70px;
 }
 .bg-color-1{
@@ -54,7 +54,7 @@ body a:hover {
 }
 .title{
 	width: 100%;
-	background: #4464f5;
+	background: rgb(48, 129, 252);
 	padding: 20px 0px;
 	color: white;
 	text-align: center;
@@ -69,74 +69,40 @@ body a:hover {
 .item{
 	background: #BECCCD;
 	margin: 5px;
-  margin-right: 70px;
+    margin-right: 70px;
 	padding: 15px;
 }
-.github-btn {
+.button {
     background: #fff;
 }
-.content-project .github-btn {
+.button {
   align-items: center;
-  border: 2px solid #2f353a;
+  border: 5px solid #62b8ff;
   border-radius: 5px; 
   display: block;
-  width: 180px;
+  width: 150px;
+  align-items: center;
 }
-.content-project .github-btn:hover {
+.button:hover {
     box-shadow: 1px 1px 5px 1px #ccc;
 }
-.content-project .github-btn div {
+.button div {
     font-family: 'Inconsolata';
     font-size: 16px;
     line-height: 1; 
     margin: 10px 25px;
-}
-.content-project .github-btn div {
     margin-top: 6px;
-
 }
-.content-project a {
-  text-decoration: none;
+.button-content {
+    text-align: center;
+    align-self: center;
+    margin-left: 275px;
+    display: inline-block;
 }
-.content-project {
-  background: rgba(118,174,241,1);
-  border: 4px solid #ccff00;
-}
-.content-project:hover {
-  background: rgb(213, 77, 255);
-}
-
-
-.content-project2 .github-btn {
-  align-items: center;
-  border: 2px solid #2f353a;
-  border-radius: 5px; 
-  display: block;
-  width: 180px;
-}
-.content-project2 .github-btn:hover {
-    box-shadow: 1px 1px 5px 1px #ccc;
-}
-.content-project2 .github-btn div {
-    font-family: 'Inconsolata';
-    font-size: 16px;
-    line-height: 1; 
-    margin: 10px 25px;
-}
-.content-project2 .github-btn div {
-    margin-top: 6px;
-
-}
-.content-project2 a {
-  text-decoration: none;
-}
-.content-project2 {
-  background: rgba(118,174,241,1);
-  border: 4px solid #ccff00;
-  
-}
-.content-project2:hover {
-  background: rgb(213, 77, 255);
+.dev {
+    width: 120px;
+    margin-right: 85px;
+    margin-left: 20px;
 }
 
 
