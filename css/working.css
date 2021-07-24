@@ -106,6 +106,14 @@ body a:hover {
   background: rgb(213, 77, 255);
 }
 
+@media screen and (max-width: 767px) {
+ /* ALL < TABLET */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+ /* TABLET */
+}
+
 /* Buttons */
 .custom-btn {
   width: 130px;
