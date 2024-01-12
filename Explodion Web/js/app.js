@@ -139,11 +139,6 @@ function speakThis(message) {
         window.open("https://www.google.com/maps/search/Where+am+I+?/", "_blank");
     }
 
-    else if(message.includes('who has the best only fans')) {
-        const finalText = "Lohit";
-        speech.text = finalText;
-    }
-
     else if (message.includes('capture screenshot')) {
       html2canvas(document.documentElement).then(canvas => {
           const dataURL = canvas.toDataURL('image/png');
