@@ -1,0 +1,52 @@
+:root {
+	font-size: calc(16px + (48 - 16)*(100vw - 320px)/(2560 - 320));
+}
+body, button {
+	font: 1em/1 "Hind", sans-serif;
+}
+button {
+	background: #f42525;
+	border-radius: 0.2em;
+	color: #fff;
+	cursor: pointer;
+	margin: auto;
+	padding: 0.1em 0.2em;
+  margin-right: 20px;
+	transition: background .15s linear, color .15s linear;
+}
+button:focus, button:hover {
+	background: #da0b0b;
+}
+button:focus {
+	outline: transparent;
+}
+button::-moz-focus-inner {
+	border: 0;
+}
+button:active {
+	transform: translateY(0.1em);
+}
+.exploding, .exploding:focus, .exploding:hover {
+	background: transparent;
+	color: transparent;
+}
+.exploding {
+	pointer-events: none;
+	position: relative;
+	will-change: transform;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.particle {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.particle--debris {
+	background: #f42525;
+}
+.particle--fire {
+	border-radius: 50%;
+}

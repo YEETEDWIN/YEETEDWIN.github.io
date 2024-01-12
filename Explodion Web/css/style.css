@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  overflow: hidden;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container .image {
+  width: 60%;
+  display: flex;
+  margin-left: 180px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.main .image-container .image img {
+  width: 750px;
+  align-items: center;
+}
+
+.main .image-container h1 {
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.main .image-container p { /* span instead of p for explosion */
+  color: #324042;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50px;
+  border-radius: 20px;
+  background: rgb(202 253 255 / 50%);
+}
+
+.main .input .talk {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: #aed0d0;
+}
+
+.main .input .stop {
+  justify-content: center;
+  align-items: center;
+}
+
+.main .input .content {
+  color: #aed0d0;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.screenshot-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: auto;  /* Allow scrolling */
+}
+
+.screenshot-modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* ROCKSS */
+.screenshot-modal button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-modal button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.screenshot-modal button:hover {
+  background-color: #2980b9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-modal button:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.gif {
+  animation-duration: .3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.gif:hover {
+  animation-name: jittery;
+}
+
+@keyframes jittery {
+  10% {
+      transform: translate(-2px, -3px) scale(1.01, 1.01);
+  }
+  20% {
+      transform: translate(3px, 2px) scale(.99, .99);
+  }
+  30% {
+      transform: translate(-4px, -5px) scale(1.01, 1.01);
+  }
+  40% {
+      transform: translate(2px, 3px) scale(1, 1);
+  }
+  50% {
+      transform: translate(-1px, -2px) scale(.98, .98);
+  }
+  60% {
+      transform: translate(0px, 3px) scale(1.02, 1.02);
+  }
+  70% {
+      transform: translate(-2px, -4px) scale(1, 1);
+  }
+  80% {
+      transform: translate(3px, 5px) scale(.99, .99);
+  }
+  90% {
+      transform: translate(-5px, -3px) scale(1.1, 1.1);
+  }
+  100% {
+      transform: translate(3px, 1px) scale(.95, .95);
+  }
+}
