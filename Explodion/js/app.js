@@ -3,6 +3,8 @@ const gif = document.querySelector('.gif')
 const content = document.querySelector('.content');
 const stop = document.querySelector('.stop');
 
+let SpeechAPI = true
+
 class person {
     constructor(name, age) {
         this.name = name
@@ -56,9 +58,14 @@ function wishMe() {
 }
 
 window.addEventListener('load', ()=>{
-    speak("Activating Explodion");
-    speak("Going online");
-    wishMe();
+    if (!('webkitSpeechRecognition' in window)) {
+      SpeechAPI = false
+      content.innerHTML = "Web Speech API is not supported by this browser"
+    } else {
+      speak("Activating Explodion");
+      speak("Going online");
+      wishMe();
+    }  
 })
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -72,11 +79,15 @@ recognition.onresult = (event) => {
 }
 
 btn.addEventListener('click', ()=>{
+  if (SpeechAPI) {
     recognition.start();
+  }
 })
 
 gif.addEventListener('click', ()=>{
+  if (SpeechAPI) {
     recognition.start();
+  }
 })
 
 stop.addEventListener('click', ()=>{
@@ -137,6 +148,11 @@ function speakThis(message) {
         const finalText = "As per Google Maps, it seems that you are in "+geoplugin_city()+", "+geoplugin_region()+" in "+geoplugin_countryName();
         speech.text = finalText;
         window.open("https://www.google.com/maps/search/Where+am+I+?/", "_blank");
+    }
+
+    else if(message.includes('who has the best only fans')) {
+        const finalText = "Lohit";
+        speech.text = finalText;
     }
 
     else if (message.includes('capture screenshot')) {
@@ -255,23 +271,75 @@ function speakThis(message) {
       speech.text = finalText
     }
 
-    else if (message.includes('self-destruct')) {
-      const explosionContainer = document.createElement('div');
-      explosionContainer.className = 'explosion-container';
-
-      const explosion = document.createElement('div');
-      explosion.className = 'explosion';
-
-      explosionContainer.appendChild(explosion);
-      document.body.appendChild(explosionContainer);
-
-      // Triggering explosion animation
+    else if (message.includes('self-destruct') || message.includes('self destruct')) {
       setTimeout(() => {
-          explosion.style.animation = 'explode 1s forwards';
-      }, 100);
+        window.location.href = "https://cdn.mos.cms.futurecdn.net/Wc5NinaNydq5KzrGrxL6Md-1200-80.jpg";
+      }, 10000);
 
-      // Your self-destruct logic here, e.g., changing the background, etc.
-      document.body.style.backgroundColor = 'black';
+      // Create particles directly on the document body
+      let particles = [];
+
+      // Function to create a new particle at a random position on the screen
+      function newParticle() {
+          let x = Math.random() * window.innerWidth;
+          let y = Math.random() * window.innerHeight;
+          let type = Math.random() < 0.5 ? 0 : 1;
+
+          particles.push({
+              x: x,
+              y: y,
+              xv: type ? 18 * Math.random() - 9 : 24 * Math.random() - 12,
+              yv: type ? 18 * Math.random() - 9 : 24 * Math.random() - 12,
+              c: type ? `rgb(255, ${Math.floor(200 * Math.random())}, ${Math.floor(80 * Math.random())})` : 'rgb(255,255,255)',
+              s: type ? 5 + 10 * Math.random() : 1,
+              a: 1
+          });
+      }
+
+      // Function to draw particles on the screen
+      function drawParticles() {
+          let body = document.body;
+          for (let i = 0; i < particles.length; i++) {
+              let p = particles[i];
+              let particle = document.createElement('div');
+              particle.className = 'particle';
+              particle.style.left = p.x + 'px';
+              particle.style.top = p.y + 'px';
+              particle.style.width = p.s + 'px';
+              particle.style.height = p.s + 'px';
+              particle.style.backgroundColor = p.c;
+              body.appendChild(particle);
+          }
+      }
+
+      // Function to update particle positions and animate them
+      function updateParticles() {
+          for (let i = 0; i < particles.length; i++) {
+              let p = particles[i];
+              p.x += p.xv;
+              p.y += p.yv;
+              p.a *= 0.99;
+          }
+      }
+
+      // Function to remove particles that are no longer visible
+      function removeParticles() {
+          particles = particles.filter(p => p.a > 0.01 && p.x >= 0 && p.x <= window.innerWidth && p.y >= 0 && p.y <= window.innerHeight);
+      }
+
+      // Function to loop the animation
+      function startLoop(newTime) {
+          drawParticles();
+          updateParticles();
+          removeParticles();
+          requestAnimationFrame(startLoop);
+      }
+
+      // Start the animation loop
+      requestAnimationFrame(startLoop);
+
+      // Function to periodically create new particles
+      setInterval(newParticle, 10);
 
       // Responding with a message
       speech.text = "Initiating self-destruct sequence. Please evacuate the area.";
@@ -394,6 +462,7 @@ function speakThis(message) {
     }
 
     else if (message.includes('tell me about') || message.includes('who is')) {
+      //FIXME: Requires you to go to https://cors-anywhere.herokuapp.com/corsdemo to activate temp access
       const searchTerm = message.replace(/(tell me about|what is|who is)/i, '').trim();
       const wikipediaURL = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=true&redirects=true&titles=${encodeURIComponent(searchTerm)}`;
       const stripHtmlTags = (html) => {
@@ -520,6 +589,11 @@ function speakThis(message) {
             console.error('Error evaluating expression:', error);
             speech.text = 'Sorry, there was an error evaluating the expression.';
         }
+    }
+    
+    else if (message == "close") {
+      const finalText = "I will always be watching you "+Person.name;
+      speech.text = finalText;
     }
 
     else {
